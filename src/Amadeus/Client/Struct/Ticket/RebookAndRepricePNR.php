@@ -43,6 +43,7 @@ use Amadeus\Client\Struct\Fare\PricePnr13\PaxSegTstReference;
 use Amadeus\Client\Struct\Fare\PricePnr13\PenDisInformation;
 use Amadeus\Client\Struct\Fare\PricePnr13\TaxData;
 use Amadeus\Client\Struct\Fare\PricePnr13\TaxInformation;
+use Amadeus\Client\Struct\Ticket\RebookAndRepricePNR\Reservation;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\ExchangeInformationGroup;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
@@ -55,7 +56,10 @@ use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
  */
 class RebookAndRepricePNR extends BaseWsMessage
 {
-    public string $bookingIdentifier;
+    /**
+     * @var Reservation
+     */
+    public Reservation $reservation;
 
     /**
      * @var ExchangeInformationGroup[]
@@ -80,7 +84,7 @@ class RebookAndRepricePNR extends BaseWsMessage
     public function __construct($options)
     {
         if (!is_null($options)) {
-            $this->bookingIdentifier = $options->bookingIdentifier;
+            $this->bookingIdentifier = new Reservation($options->bookingIdentifier);
 //            $this->loadExchangeInfo($options->exchangeInfo);
 //
 //            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);
