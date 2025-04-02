@@ -38,10 +38,10 @@ class RebookAndRepricePNR extends BaseConverter
     /**
      * @param TicketRebookAndRepricePNROptions $requestOptions
      * @param int|string $version
-     * @return Struct\Ticket\AtcShopperMasterPricerCalendar
+     * @return Struct\Ticket\RebookAndRepricePNR
      */
     public function convert($requestOptions, $version)
     {
-        return new Struct\Ticket\AtcShopperMasterPricerCalendar($requestOptions);
+        return new Struct\Ticket\RebookAndRepricePNR($requestOptions);
     }
 }
