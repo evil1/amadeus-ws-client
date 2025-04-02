@@ -59,7 +59,7 @@ class RebookAndRepricePNR extends BaseWsMessage
     /**
      * @var Reservation
      */
-    public Reservation $reservation;
+    public Reservation $Reservation;
 
     /**
      * @var ExchangeInformationGroup[]
@@ -84,7 +84,7 @@ class RebookAndRepricePNR extends BaseWsMessage
     public function __construct($options)
     {
         if (!is_null($options)) {
-            $this->reservation = new Reservation($options->bookingIdentifier);
+            $this->Reservation = new Reservation($options->bookingIdentifier);
 //            $this->loadExchangeInfo($options->exchangeInfo);
 //
 //            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);
