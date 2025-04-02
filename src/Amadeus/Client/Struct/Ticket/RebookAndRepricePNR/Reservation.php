@@ -4,7 +4,7 @@ namespace Amadeus\Client\Struct\Ticket\RebookAndRepricePNR;
 
 use Amadeus\Client\Struct\WsMessageUtility;
 
-class Reservation extends WsMessageUtility
+class Reservation
 {
     public string $bookingIdentifier;
 
