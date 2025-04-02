@@ -2,7 +2,7 @@
 
 namespace Amadeus\Client\RequestOptions;
 
-use Amadeus\Client\RequestOptions\Ticket\AirSegment;
+use Amadeus\Client\RequestOptions\Ticket\RebookAndRepricePNR\AirSegment;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
 
 class TicketRebookAndRepricePNROptions extends Base
