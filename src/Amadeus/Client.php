@@ -1265,7 +1265,7 @@ class Client extends Base
     /**
      * Ticket_RebookAndRepricePNR
      *
-     * @param RequestOptions\RebookAndRepricePNRClassOptions $options
+     * @param RequestOptions\TicketRebookAndRepricePNROptions $options
      * @param array $messageOptions (OPTIONAL)
      * @return Result
      * @throws Client\InvalidMessageException
@@ -1273,8 +1273,8 @@ class Client extends Base
      * @throws Exception
      */
     public function ticketRebookAndRepricePNR(
-        RequestOptions\RebookAndRepricePNRClassOptions $options,
-        $messageOptions = []
+        RequestOptions\TicketRebookAndRepricePNROptions $options,
+                                                        $messageOptions = []
     ) {
         $msgName = 'Ticket_RebookAndRepricePNR';
 

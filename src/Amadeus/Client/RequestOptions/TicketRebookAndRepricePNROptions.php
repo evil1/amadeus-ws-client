@@ -6,7 +6,7 @@ use Amadeus\Client\Struct\Fare\MasterPricer\PNRSegmentReference;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\ExchangeInformationGroup;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
 
-class RebookAndRepricePNRClassOptions extends Base
+class TicketRebookAndRepricePNROptions extends Base
 {
     public string $bookingIdentifier;
 
