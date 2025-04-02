@@ -34,7 +34,7 @@ class TicketRebookAndRepricePNROptions extends Base
     public array $bound = [];
 
     /**
-     * @var Reference[]
+     * @var int[] Segments Refs to cancel
      */
     public array $cancellation = [];
 
