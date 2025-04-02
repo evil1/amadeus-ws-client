@@ -21,8 +21,10 @@ class Rebooking
             ]);
         }
 
+        $i = 0;
         foreach ($segments as $segment) {
-            \Yii::error(print_r($segment, true));
+            ++$i;
+            $this->Bounds[] = new Bound($segment, 'SEG' . $i);
         }
     }
 }

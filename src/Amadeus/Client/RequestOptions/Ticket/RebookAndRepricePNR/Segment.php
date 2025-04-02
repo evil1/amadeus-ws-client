@@ -13,5 +13,5 @@ use Amadeus\Client\LoadParamsFromArray;
  */
 class Segment extends \Amadeus\Client\RequestOptions\Air\SellFromRecommendation\Segment
 {
-
+    public bool $isOpenSegment = false;
 }
