@@ -4,7 +4,9 @@ namespace Amadeus\Client\Struct\Ticket\RebookAndRepricePNR;
 
 class Rebooking
 {
-    public $Cancellation = [];
+    public array $Cancellation = [];
+
+    public array $Bounds = [];
 
     public function __construct(array $segments)
     {

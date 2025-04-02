@@ -2,8 +2,7 @@
 
 namespace Amadeus\Client\RequestOptions;
 
-use Amadeus\Client\RequestOptions\Pnr\Reference;
-use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\ExchangeInformationGroup;
+use Amadeus\Client\RequestOptions\Ticket\AirSegment;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
 
 class TicketRebookAndRepricePNROptions extends Base
@@ -29,9 +28,9 @@ class TicketRebookAndRepricePNROptions extends Base
     public string $bookingIdentifier;
 
     /**
-     * @var ExchangeInformationGroup[]
+     * @var AirSegment[]
      */
-    public array $bound = [];
+    public array $segments = [];
 
     /**
      * @var int[] Segments Refs to cancel
