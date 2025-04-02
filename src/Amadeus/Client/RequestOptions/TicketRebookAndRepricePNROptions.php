@@ -2,7 +2,7 @@
 
 namespace Amadeus\Client\RequestOptions;
 
-use Amadeus\Client\Struct\Fare\MasterPricer\PNRSegmentReference;
+use Amadeus\Client\RequestOptions\Pnr\Reference;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\ExchangeInformationGroup;
 use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
 
@@ -16,7 +16,7 @@ class TicketRebookAndRepricePNROptions extends Base
     public array $bound = [];
 
     /**
-     * @var PNRSegmentReference[]
+     * @var Reference[]
      */
     public array $cancellation = [];
 
