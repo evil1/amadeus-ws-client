@@ -33,7 +33,7 @@ use Amadeus\Client\Struct;
  * @package Amadeus\Client\RequestCreator\Converter\Ticket
  * @author Artem Zakharchenko <artz.relax@gmail.com>
  */
-class RebookAndRepricePNR extends BaseConverter
+class RebookAndRepricePNRConv extends BaseConverter
 {
     /**
      * @param TicketRebookAndRepricePNROptions $requestOptions

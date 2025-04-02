@@ -145,6 +145,7 @@ class Base implements RequestCreatorInterface
     {
         $builder = null;
 
+        \Yii::error(print_r($this->messageBuilders, true));
         if (array_key_exists($messageName, $this->messageBuilders) &&
             $this->messageBuilders[$messageName] instanceof ConvertInterface
         ) {
