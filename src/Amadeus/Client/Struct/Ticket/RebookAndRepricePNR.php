@@ -52,7 +52,7 @@ use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
  * @package Amadeus\Client\Struct\Ticket
  * @author Dmitriy Gritsenko <dg@uis.kz>
  */
-class RebookAndRepricePNRClass extends BaseWsMessage
+class RebookAndRepricePNR extends BaseWsMessage
 {
     /**
      * @var ExchangeInformationGroup[]
