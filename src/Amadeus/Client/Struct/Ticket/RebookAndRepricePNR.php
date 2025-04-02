@@ -84,7 +84,7 @@ class RebookAndRepricePNR extends BaseWsMessage
     public function __construct($options)
     {
         if (!is_null($options)) {
-            $this->bookingIdentifier = new Reservation($options->bookingIdentifier);
+            $this->reservation = new Reservation($options->bookingIdentifier);
 //            $this->loadExchangeInfo($options->exchangeInfo);
 //
 //            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);

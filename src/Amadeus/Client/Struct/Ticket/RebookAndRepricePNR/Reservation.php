@@ -8,10 +8,8 @@ class Reservation extends WsMessageUtility
 {
     public string $bookingIdentifier;
 
-    public function __construct(string $locator = null)
+    public function __construct(string $locator)
     {
-        if (!is_null($locator)) {
-            $this->bookingIdentifier = $locator;
-        }
+        $this->bookingIdentifier = $locator;
     }
 }
