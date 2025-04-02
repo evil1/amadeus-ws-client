@@ -1263,6 +1263,25 @@ class Client extends Base
     }
 
     /**
+     * Ticket_RebookAndRepricePNR
+     *
+     * @param RequestOptions\RebookAndRepricePNRClassOptions $options
+     * @param array $messageOptions (OPTIONAL)
+     * @return Result
+     * @throws Client\InvalidMessageException
+     * @throws Client\RequestCreator\MessageVersionUnsupportedException
+     * @throws Exception
+     */
+    public function ticketRebookAndRepricePNR(
+        RequestOptions\RebookAndRepricePNRClassOptions $options,
+        $messageOptions = []
+    ) {
+        $msgName = 'Ticket_RebookAndRepricePNR';
+
+        $this->callMessage($msgName, $options, $messageOptions);
+    }
+
+    /**
      * Ticket_ATCShopperMasterPricerTravelBoardSearch
      *
      * @param RequestOptions\TicketAtcShopperMpTbSearchOptions $options
