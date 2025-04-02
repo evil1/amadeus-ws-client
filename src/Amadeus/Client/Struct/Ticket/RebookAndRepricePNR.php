@@ -29,6 +29,7 @@ use Amadeus\Client\RequestOptions\Fare\PricePnr\Tax;
 use Amadeus\Client\RequestOptions\Ticket\ExchangeInfoOptions;
 use Amadeus\Client\RequestOptions\Ticket\MultiRefOpt;
 use Amadeus\Client\RequestOptions\Ticket\PaxSegRef;
+use Amadeus\Client\RequestOptions\TicketRebookAndRepricePNROptions;
 use Amadeus\Client\RequestOptions\TicketRepricePnrWithBookingClassOptions;
 use Amadeus\Client\Struct\BaseWsMessage;
 use Amadeus\Client\Struct\Fare\MasterPricer\PNRSegmentReference;
@@ -54,6 +55,8 @@ use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
  */
 class RebookAndRepricePNR extends BaseWsMessage
 {
+    public string $bookingIdentifier;
+
     /**
      * @var ExchangeInformationGroup[]
      */
@@ -70,16 +73,17 @@ class RebookAndRepricePNR extends BaseWsMessage
     public array $pricingOptions = [];
 
     /**
-     * RepricePnrWithBookingClass constructor.
+     * RebookAndRepricePNR constructor.
      *
-     * @param TicketRepricePnrWithBookingClassOptions $options
+     * @param TicketRebookAndRepricePNROptions $options
      */
     public function __construct($options)
     {
         if (!is_null($options)) {
-            $this->loadExchangeInfo($options->exchangeInfo);
-
-            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);
+            $this->bookingIdentifier = $options->bookingIdentifier;
+//            $this->loadExchangeInfo($options->exchangeInfo);
+//
+//            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);
         }
     }
 
