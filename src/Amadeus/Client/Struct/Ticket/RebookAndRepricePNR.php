@@ -56,6 +56,7 @@ use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
  */
 class RebookAndRepricePNR extends BaseWsMessage
 {
+    public array $Actions = [];
     /**
      * @var Reservation
      */
@@ -84,6 +85,7 @@ class RebookAndRepricePNR extends BaseWsMessage
     public function __construct($options)
     {
         if (!is_null($options)) {
+            $this->Actions = $options->actions;
             $this->Reservation = new Reservation($options->bookingIdentifier);
 //            $this->loadExchangeInfo($options->exchangeInfo);
 //
