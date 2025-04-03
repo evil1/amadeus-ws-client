@@ -79,9 +79,7 @@ class RebookAndRepricePNR extends BaseWsMessage
             $this->Actions = $options->actions;
             $this->Reservation = new Reservation($options->bookingIdentifier);
             $this->Rebooking = new Rebooking($options->cancellation, $options->segments);
-//            $this->loadExchangeInfo($options->exchangeInfo);
-//
-//            $this->pricingOption = $this->loadPricingOptionsFromRequestOptions($options);
+            $this->Repricing = new Repricing($options->tickets);
         }
     }
 }
