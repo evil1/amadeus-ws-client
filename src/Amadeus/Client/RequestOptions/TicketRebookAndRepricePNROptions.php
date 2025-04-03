@@ -2,8 +2,8 @@
 
 namespace Amadeus\Client\RequestOptions;
 
-use Amadeus\Client\RequestOptions\Ticket\RebookAndRepricePNR\AirSegment;
-use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
+use Amadeus\Client\RequestOptions\Ticket\RebookAndRepricePNR\Segment;
+use Amadeus\Client\RequestOptions\Ticket\RebookAndRepricePNR\Ticket;
 
 class TicketRebookAndRepricePNROptions extends Base
 {
@@ -28,7 +28,7 @@ class TicketRebookAndRepricePNROptions extends Base
     public string $bookingIdentifier;
 
     /**
-     * @var AirSegment[]
+     * @var Segment[]
      */
     public array $segments = [];
 
@@ -38,7 +38,7 @@ class TicketRebookAndRepricePNROptions extends Base
     public array $cancellation = [];
 
     /**
-     * @var PricingOption[]
+     * @var Ticket[]
      */
-    public array $itineraryPricingOptions = [];
+    public array $tickets = [];
 }
