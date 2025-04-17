@@ -2058,10 +2058,6 @@ class Client extends Base
         $messageOptions = $this->makeMessageOptions($messageOptions, $endSession);
 
         $this->lastMessage = $messageName;
-        \Yii::error(print_r($this->requestCreator->createRequest(
-            $messageName,
-            $options
-        ), true));
         $sendResult = $this->sessionHandler->sendMessage(
             $messageName,
             $this->requestCreator->createRequest(
