@@ -4,13 +4,13 @@ namespace Amadeus\Client\Struct\Ticket\RebookAndRepricePNR;
 
 class Commit
 {
-    public bool $IgnoreWarningOption;
+    public bool $IgnoreWarningsOption;
 
     public string $ReceivedFrom;
 
     public function __construct(bool $ignoreWarnings, string $receivedFrom)
     {
-        $this->IgnoreWarningOption = $ignoreWarnings;
+        $this->IgnoreWarningsOption = $ignoreWarnings;
         $this->ReceivedFrom = $receivedFrom;
     }
 }
