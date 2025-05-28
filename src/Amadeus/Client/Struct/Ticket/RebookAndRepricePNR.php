@@ -22,33 +22,12 @@
 
 namespace Amadeus\Client\Struct\Ticket;
 
-use Amadeus\Client\RequestOptions\Fare\PricePnr\AwardPricing;
-use Amadeus\Client\RequestOptions\Fare\PricePnr\ExemptTax;
-use Amadeus\Client\RequestOptions\Fare\PricePnr\FareBasis;
-use Amadeus\Client\RequestOptions\Fare\PricePnr\Tax;
-use Amadeus\Client\RequestOptions\Ticket\ExchangeInfoOptions;
-use Amadeus\Client\RequestOptions\Ticket\MultiRefOpt;
-use Amadeus\Client\RequestOptions\Ticket\PaxSegRef;
 use Amadeus\Client\RequestOptions\TicketRebookAndRepricePNROptions;
-use Amadeus\Client\RequestOptions\TicketRepricePnrWithBookingClassOptions;
 use Amadeus\Client\Struct\BaseWsMessage;
-use Amadeus\Client\Struct\Fare\MasterPricer\PNRSegmentReference;
-use Amadeus\Client\Struct\Fare\PricePnr13\CarrierInformation;
-use Amadeus\Client\Struct\Fare\PricePnr13\Currency;
-use Amadeus\Client\Struct\Fare\PricePnr13\FrequentFlyerInformation;
-use Amadeus\Client\Struct\Fare\PricePnr13\FrequentTravellerDetails;
-use Amadeus\Client\Struct\Fare\PricePnr13\LocationInformation;
-use Amadeus\Client\Struct\Fare\PricePnr13\OptionDetail;
-use Amadeus\Client\Struct\Fare\PricePnr13\PaxSegTstReference;
-use Amadeus\Client\Struct\Fare\PricePnr13\PenDisInformation;
-use Amadeus\Client\Struct\Fare\PricePnr13\TaxData;
-use Amadeus\Client\Struct\Fare\PricePnr13\TaxInformation;
+use Amadeus\Client\Struct\Ticket\RebookAndRepricePNR\Commit;
 use Amadeus\Client\Struct\Ticket\RebookAndRepricePNR\Rebooking;
 use Amadeus\Client\Struct\Ticket\RebookAndRepricePNR\Repricing;
 use Amadeus\Client\Struct\Ticket\RebookAndRepricePNR\Reservation;
-use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\ExchangeInformationGroup;
-use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOption;
-use Amadeus\Client\Struct\Ticket\RepricePnrWithBookingClass\PricingOptionKey;
 
 /**
  * Ticket_RebookAndRepricePNRClass request structure
@@ -64,6 +43,8 @@ class RebookAndRepricePNR extends BaseWsMessage
      */
     public Reservation $Reservation;
 
+    public Commit $Commit;
+
     public Rebooking $Rebooking;
 
     public Repricing $Repricing;
@@ -78,6 +59,7 @@ class RebookAndRepricePNR extends BaseWsMessage
         if (!is_null($options)) {
             $this->Actions = $options->actions;
             $this->Reservation = new Reservation($options->bookingIdentifier);
+            $this->Commit = new Commit($options->ignoreWarnings, $options->receivedFrom);
             $this->Rebooking = new Rebooking($options->cancellation, $options->segments);
             $this->Repricing = new Repricing($options->tickets);
         }

@@ -15,10 +15,16 @@ class TicketRebookAndRepricePNROptions extends Base
 
     const ACTION_SANITIZE_FOP_TST = 'SANITIZE';
 
+    public bool $ignoreWarnings = false;
+
+    public string $receivedFrom = '';
+
     /**
-     * @var string[] List of actions to perform. Allowed actions are: `COMMIT` to commit modifications, `QTDISPLAY` to
-     * have quotation records returned after a repricing and `FULLDISPLAY` if all repricing details should be returned
-     * by the service. If left empty, by default commit will not be performed.
+     * @var string[] List of actions to perform. Allowed actions are:
+     * `COMMIT` to commit modifications.
+     * `QTDISPLAY` to have quotation records returned after a repricing.
+     * `FULLDISPLAY` if the service should return all repricing details.
+     *  If left empty, by default the commit will not be performed.
      */
     public array $actions = [];
 
