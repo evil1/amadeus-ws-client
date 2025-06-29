@@ -24,8 +24,11 @@ namespace Amadeus;
 
 use Amadeus\Client\Base;
 use Amadeus\Client\Exception;
+use Amadeus\Client\InvalidMessageException;
 use Amadeus\Client\Params;
+use Amadeus\Client\RequestCreator\MessageVersionUnsupportedException;
 use Amadeus\Client\RequestOptions;
+use Amadeus\Client\RequestOptions\HotelMultiSingleAvailOptions;
 use Amadeus\Client\Result;
 use Amadeus\Client\Session\Handler\UnsupportedOperationException;
 
@@ -1650,6 +1653,26 @@ class Client extends Base
     public function fopValidateFOP(RequestOptions\FopValidateFopOptions $options, $messageOptions = [])
     {
         $msgName = 'FOP_ValidateFOP';
+
+        return $this->callMessage($msgName, $options, $messageOptions);
+    }
+
+    /**
+     * Hotel_MultiSingleAvailability
+     *
+     * @param HotelMultiSingleAvailOptions $options
+     * @param array $messageOptions (OPTIONAL)
+     * @return Result
+     * @throws InvalidMessageException
+     * @throws MessageVersionUnsupportedException
+     * @throws Exception
+     */
+    public function hotelMultiSingleAvailability(
+        RequestOptions\HotelMultiSingleAvailOptions $options,
+        array $messageOptions = []
+    ): Result
+    {
+        $msgName = 'Hotel_MultiSingleAvailability';
 
         return $this->callMessage($msgName, $options, $messageOptions);
     }
