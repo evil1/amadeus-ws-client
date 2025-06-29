@@ -52,11 +52,11 @@ class HotelSearchCriteriaType
     /**
      * HotelSearchCriteriaType constructor.
      *
-     * @param Criteria[] $criteria
+     * @param Criteria $criteria
      * @param bool $bestOnly
      * @param bool $availableOnly
      */
-    public function __construct(array $criteria, bool $bestOnly, bool $availableOnly)
+    public function __construct(Criteria $criteria, bool $bestOnly, bool $availableOnly)
     {
         $this->BestOnlyIndicator = $bestOnly;
         $this->AvailableOnlyIndicator = $availableOnly;

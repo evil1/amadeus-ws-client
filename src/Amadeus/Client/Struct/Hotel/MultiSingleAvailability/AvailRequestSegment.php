@@ -49,7 +49,7 @@ class AvailRequestSegment
      *
      * @param Segment|null $segment
      */
-    public function __construct($segment = null)
+    public function __construct(Segment $segment = null)
     {
         if ($segment instanceof Segment) {
             $this->InfoSource = $segment->infoSource;
