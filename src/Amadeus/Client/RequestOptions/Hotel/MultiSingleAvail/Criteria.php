@@ -38,7 +38,7 @@ class Criteria extends LoadParamsFromArray
     /**
      * @var bool
      */
-    public bool $exactMatch;
+    public bool $exactMatch = true;
 
     /**
      * @var HotelReference[]
@@ -70,5 +70,5 @@ class Criteria extends LoadParamsFromArray
      *
      * @var string
      */
-    public string $alternateAvailability;
+    public string $alternateAvailability = '';
 }
