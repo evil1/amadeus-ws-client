@@ -46,7 +46,7 @@ class Segment extends LoadParamsFromArray
     /**
      * @var bool
      */
-    public bool $bestOnly = false;
+    public bool $bestOnly;
 
     /**
      * @var bool

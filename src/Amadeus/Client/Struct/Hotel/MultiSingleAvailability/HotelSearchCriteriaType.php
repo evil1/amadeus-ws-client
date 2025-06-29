@@ -53,14 +53,9 @@ class HotelSearchCriteriaType
      * HotelSearchCriteriaType constructor.
      *
      * @param Criteria[] $criteria
-     * @param bool $bestOnly
-     * @param bool $availableOnly
      */
-    public function __construct(array $criteria, bool $bestOnly, bool $availableOnly)
+    public function __construct(array $criteria)
     {
-        $this->BestOnlyIndicator = $bestOnly;
-        $this->AvailableOnlyIndicator = $availableOnly;
-
         foreach ($criteria as $criterion) {
             $this->Criterion[] = new Criterion($criterion);
         }
