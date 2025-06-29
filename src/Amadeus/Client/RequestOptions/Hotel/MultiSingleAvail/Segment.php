@@ -51,7 +51,7 @@ class Segment extends LoadParamsFromArray
     /**
      * @var bool
      */
-    public bool $availableOnly = true;
+    public bool $availableOnly;
 
     /**
      * @var Criteria[]

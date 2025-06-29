@@ -54,11 +54,11 @@ class AvailRequestSegment
         if ($segment instanceof Segment) {
             $this->InfoSource = $segment->infoSource;
             $this->HotelSearchCriteria = new HotelSearchCriteria($segment->criteria);
-            if (isset($segment->alternateAvailability)) {
+            if (isset($segment->bestOnly)) {
                 $this->HotelSearchCriteria->BestOnlyIndicator = $segment->bestOnly;
             }
-            if (isset($segment->alternateAvailability)) {
-                $this->HotelSearchCriteria->AvailableOnlyIndicator = $segment->alternateAvailability;
+            if (isset($segment->availableOnly)) {
+                $this->HotelSearchCriteria->AvailableOnlyIndicator = $segment->availableOnly;
             }
         }
     }
