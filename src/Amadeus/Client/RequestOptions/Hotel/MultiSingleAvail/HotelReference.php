@@ -33,27 +33,27 @@ use Amadeus\Client\LoadParamsFromArray;
 class HotelReference extends LoadParamsFromArray
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $chainCode = '';
+    public string|null $chainCode;
 
     /**
      * @var string
      */
-    public string $cityCode = '';
+    public string $cityCode;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public string $name = '';
+    public string|null $name;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public string $hotelCode = '';
+    public string|null $hotelCode;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public string $codeContext = '';
+    public string|null $codeContext;
 }

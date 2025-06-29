@@ -101,7 +101,7 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var bool
      */
-    public bool $exactMatchOnly = true;
+    public bool $exactMatchOnly = false;
 
     /**
      * Sort order of the returned property information
