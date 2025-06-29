@@ -35,7 +35,7 @@ class HotelReference extends LoadParamsFromArray
     /**
      * @var string|null
      */
-    public string|null $chainCode;
+    public string|null $chainCode = null;
 
     /**
      * @var string
@@ -45,15 +45,15 @@ class HotelReference extends LoadParamsFromArray
     /**
      * @var string|null
      */
-    public string|null $name;
+    public string|null $name = null;
 
     /**
      * @var string|null
      */
-    public string|null $hotelCode;
+    public string|null $hotelCode = null;
 
     /**
      * @var string|null
      */
-    public string|null $codeContext;
+    public string|null $codeContext = null;
 }
