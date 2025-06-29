@@ -71,7 +71,7 @@ class HotelMultiSingleAvailOptions extends Base
     public bool $rateDetails = true;
 
     /**
-     * 3-character currency code
+     * 3-character ISO currency code
      *
      * @var string
      */
