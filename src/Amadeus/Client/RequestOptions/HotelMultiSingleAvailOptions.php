@@ -110,14 +110,14 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var string
      */
-    public string $sortOrder = self::SORT_CHEAPEST_FIRST;
+    public string $sortOrder;
 
     /**
      * How many results?
      *
      * @var int
      */
-    public int $maxResponses = 100;
+    public int $maxResponses;
 
     /**
      * What caching level to be used

@@ -136,9 +136,14 @@ class MultiSingleAvailability extends BaseWsMessage
         $this->RateRangeOnly = $options->rateRangeOnly;
         $this->RequestedCurrency = $options->requestedCurrency;
         $this->SummaryOnly = $options->summaryOnly;
-        $this->SortOrder = $options->sortOrder;
-        $this->MaxResponses = $options->maxResponses;
         $this->SearchCacheLevel = $options->searchCacheLevel;
+
+        if (!empty($options->sortOrder)) {
+            $this->SortOrder = $options->sortOrder;
+        }
+        if (!empty($options->maxResponses)) {
+            $this->MaxResponses = $options->maxResponses;
+        }
     }
 
     /**
