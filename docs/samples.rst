@@ -3698,6 +3698,18 @@ Validate FOP based on FOP line number in PNR:
         ])
     );
 
+*****
+Hotel
+*****
+----------
+Hotel_MultiSingleAvailability
+----------
+
+.. code-block:: php
+
+    use Amadeus\Client\RequestOptions\HotelMultiSingleAvailOptions;
+
+.. code-block:: php
 
 ****
 Info
