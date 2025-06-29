@@ -89,7 +89,7 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var bool
      */
-    public bool $availableRatesOnly;
+    public bool $availableRatesOnly = true;
 
     /**
      * @var string
@@ -101,7 +101,7 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var bool
      */
-    public bool $exactMatchOnly;
+    public bool $exactMatchOnly = true;
 
     /**
      * Sort order of the returned property information
@@ -117,7 +117,7 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var int
      */
-    public int $maxResponses;
+    public int $maxResponses = 100;
 
     /**
      * What caching level to be used
@@ -126,5 +126,5 @@ class HotelMultiSingleAvailOptions extends Base
      *
      * @var string
      */
-    public string $searchCacheLevel;
+    public string $searchCacheLevel = self::CACHE_OR_AGGREGATOR;
 }
