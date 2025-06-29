@@ -35,25 +35,25 @@ class HotelReference extends LoadParamsFromArray
     /**
      * @var string
      */
-    public string $chainCode;
+    public string $chainCode = '';
 
     /**
      * @var string
      */
-    public string $cityCode;
+    public string $cityCode = '';
 
     /**
      * @var string
      */
-    public string $name;
+    public string $name = '';
 
     /**
      * @var string
      */
-    public string $hotelCode;
+    public string $hotelCode = '';
 
     /**
      * @var string
      */
-    public string $codeContext;
+    public string $codeContext = '';
 }
