@@ -3707,9 +3707,9 @@ Hotel_MultiSingleAvailability
 
 .. code-block:: php
 
-    use Amadeus\Client\RequestOptions\HotelMultiSingleAvailOptions;
-
 Search 1 hotel room for 1 ADT guest in "London" by city IATA code:
+
+    use Amadeus\Client\RequestOptions\HotelMultiSingleAvailOptions;
 
 .. code-block:: php
 

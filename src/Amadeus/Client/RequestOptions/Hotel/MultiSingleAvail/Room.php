@@ -44,7 +44,7 @@ class Room extends LoadParamsFromArray
      *
      * @var int
      */
-    public int $amount;
+    public int $quantity;
 
     /**
      * All guests share the same room?
