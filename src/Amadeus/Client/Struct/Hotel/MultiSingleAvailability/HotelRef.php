@@ -94,10 +94,19 @@ class HotelRef
      */
     public function __construct(HotelReference $ref)
     {
-        $this->ChainCode = $ref->chainCode;
         $this->HotelCityCode = $ref->cityCode;
-        $this->HotelCodeContext = $ref->codeContext;
-        $this->HotelCode = $ref->hotelCode;
-        $this->HotelName = $ref->name;
+
+        if (!empty($ref->chainCode)) {
+            $this->ChainCode = $ref->chainCode;
+        }
+        if (!empty($ref->codeContext)) {
+            $this->HotelCodeContext = $ref->codeContext;
+        }
+        if (!empty($ref->hotelCode)) {
+            $this->HotelCode = $ref->hotelCode;
+        }
+        if (!empty($ref->name)) {
+            $this->HotelName = $ref->name;
+        }
     }
 }
