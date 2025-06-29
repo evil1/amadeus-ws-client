@@ -57,6 +57,9 @@ class RoomStayCandidate
         $this->RoomID = $room->id;
         $this->Quantity = $room->quantity;
 
-        $this->GuestCounts = new GuestCounts($room->guestsIsPerRoom, $room->guests);
+        $this->GuestCounts = new GuestCounts($room->guests);
+        if (isset($room->guestsIsPerRoom)) {
+            $this->GuestCounts->IsPerRoom = $room->guestsIsPerRoom;
+        }
     }
 }

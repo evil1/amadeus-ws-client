@@ -45,13 +45,10 @@ class GuestCounts
     /**
      * GuestCounts constructor.
      *
-     * @param bool $isPerRoom
      * @param Guest[] $guests
      */
-    public function __construct(bool $isPerRoom, array $guests)
+    public function __construct(array $guests)
     {
-        $this->IsPerRoom = $isPerRoom;
-
         foreach ($guests as $guest) {
             $this->GuestCount[] = new GuestCount($guest);
         }

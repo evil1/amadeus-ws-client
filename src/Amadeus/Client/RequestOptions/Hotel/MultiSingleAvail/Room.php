@@ -51,7 +51,7 @@ class Room extends LoadParamsFromArray
      *
      * @var bool
      */
-    public bool $guestsIsPerRoom = true;
+    public bool $guestsIsPerRoom;
 
     /**
      * @var Guest[]
