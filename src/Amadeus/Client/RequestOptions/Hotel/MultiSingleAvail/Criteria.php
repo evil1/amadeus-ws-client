@@ -68,7 +68,7 @@ class Criteria extends LoadParamsFromArray
     /**
      * self::ALT_AVAIL_*
      *
-     * @var string|null
+     * @var string
      */
-    public string|null $alternateAvailability = null;
+    public string $alternateAvailability;
 }

@@ -70,6 +70,8 @@ class Criterion extends HotelSearchCriterionType
             }
         }
 
-        $this->AlternateAvailability = $criterion->alternateAvailability;
+        if (!empty($criterion->alternateAvailability)) {
+            $this->AlternateAvailability = $criterion->alternateAvailability;
+        }
     }
 }
