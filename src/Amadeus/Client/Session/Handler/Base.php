@@ -183,14 +183,14 @@ abstract class Base implements HandlerInterface, LoggerAwareInterface
 
     /**
      * @param string $messageName Method Operation name as defined in the WSDL.
-     * @param BaseWsMessage|\SoapVar $messageBody
+     * @param BaseWsMessage $messageBody
      * @param array $messageOptions options: bool 'asString', bool 'endSession'
      * @return SendResult
      * @throws \InvalidArgumentException
      * @throws Client\Exception
      * @throws \SoapFault
      */
-    public function sendMessage($messageName, Client\Struct\BaseWsMessage|\SoapVar $messageBody, $messageOptions = [])
+    public function sendMessage($messageName, Client\Struct\BaseWsMessage $messageBody, $messageOptions = [])
     {
         $result = new SendResult(
             $this->getActiveVersionFor($messageName)
