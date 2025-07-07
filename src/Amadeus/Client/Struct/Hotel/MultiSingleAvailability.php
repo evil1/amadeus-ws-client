@@ -34,83 +34,83 @@ use Amadeus\Client\Struct\Hotel\MultiSingleAvailability\AvailRequestSegments;
  * @package Amadeus\Client\Struct\Hotel
  * @author Dieter Devlieghere <dieter.devlieghere@benelux.amadeus.com>
  */
-class MultiSingleAvailability extends BaseWsMessage
+class MultiSingleAvailability extends \SoapVar
 {
-    /**
-     * @var string
-     */
-    public string $EchoToken = 'MultiSingle';
-
-    /**
-     * @var string
-     */
-    public string $Version;
-
-    /**
-     * @var bool
-     */
-    public bool $SummaryOnly = true;
-
-    /**
-     * @var bool
-     */
-    public bool $RateRangeOnly = true;
-
-    /**
-     * @var bool
-     */
-    public bool $RateDetailsInd = true;
-
-    /**
-     * @var bool
-     */
-    public bool $ExactMatchOnly;
-
-    /**
-     * @var bool
-     */
-    public bool $AvailRatesOnly;
-
-    /**
-     * @var bool
-     */
-    public bool $OnRequestInd;
-
-    /**
-     * @var string
-     */
-    public string $PrimaryLangID;
-
-    /**
-     * @var string
-     */
-    public string $RequestedCurrency;
-
-
-    /**
-     * @var MultiSingleAvailability\AvailRequestSegments
-     */
-    public $AvailRequestSegments;
-
-    /**
-     * @var MultiSingleAvailability\PosType
-     */
-    public $POS;
-
-    /**
-     * @var string
-     */
-    public string $SortOrder;
-
-    /**
-     * @var int
-     */
-    public int $MaxResponses;
-
-    /**
-     * @var string
-     */
-    public string $SearchCacheLevel;
+//    /**
+//     * @var string
+//     */
+//    public string $EchoToken = 'MultiSingle';
+//
+//    /**
+//     * @var string
+//     */
+//    public string $Version;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $SummaryOnly = true;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $RateRangeOnly = true;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $RateDetailsInd = true;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $ExactMatchOnly;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $AvailRatesOnly;
+//
+//    /**
+//     * @var bool
+//     */
+//    public bool $OnRequestInd;
+//
+//    /**
+//     * @var string
+//     */
+//    public string $PrimaryLangID;
+//
+//    /**
+//     * @var string
+//     */
+//    public string $RequestedCurrency;
+//
+//
+//    /**
+//     * @var MultiSingleAvailability\AvailRequestSegments
+//     */
+//    public $AvailRequestSegments;
+//
+//    /**
+//     * @var MultiSingleAvailability\PosType
+//     */
+//    public $POS;
+//
+//    /**
+//     * @var string
+//     */
+//    public string $SortOrder;
+//
+//    /**
+//     * @var int
+//     */
+//    public int $MaxResponses;
+//
+//    /**
+//     * @var string
+//     */
+//    public string $SearchCacheLevel;
 
     /**
      * MultiSingleAvailability constructor.
@@ -119,42 +119,43 @@ class MultiSingleAvailability extends BaseWsMessage
      */
     public function __construct(HotelMultiSingleAvailOptions $options)
     {
-        $this->loadAttributes($options);
-        $this->loadSegments($options->segments);
+        parent::__construct('<OTA_HotelAvailRQ></OTA_HotelAvailRQ>', XSD_ANYXML);
+//        $this->loadAttributes($options);
+//        $this->loadSegments($options->segments);
     }
 
-    /**
-     * @param HotelMultiSingleAvailOptions $options
-     */
-    protected function loadAttributes(HotelMultiSingleAvailOptions $options): void
-    {
-        $this->Version = $options->version;
-        $this->AvailRatesOnly = $options->availableRatesOnly;
-        $this->ExactMatchOnly = $options->exactMatchOnly;
-        $this->PrimaryLangID = $options->languageCode;
-        $this->RateDetailsInd = $options->rateDetails;
-        $this->RateRangeOnly = $options->rateRangeOnly;
-        $this->RequestedCurrency = $options->requestedCurrency;
-        $this->SummaryOnly = $options->summaryOnly;
-        $this->SearchCacheLevel = $options->searchCacheLevel;
-
-        if (!empty($options->sortOrder)) {
-            $this->SortOrder = $options->sortOrder;
-        }
-        if (!empty($options->maxResponses)) {
-            $this->MaxResponses = $options->maxResponses;
-        }
-    }
-
-    /**
-     * @param MultiSingleAvail\Segment[] $segments
-     */
-    protected function loadSegments(array $segments): void
-    {
-        $this->AvailRequestSegments = new AvailRequestSegments();
-
-        foreach ($segments as $segment) {
-            $this->AvailRequestSegments->AvailRequestSegment[] = new AvailRequestSegment($segment);
-        }
-    }
+//    /**
+//     * @param HotelMultiSingleAvailOptions $options
+//     */
+//    protected function loadAttributes(HotelMultiSingleAvailOptions $options): void
+//    {
+//        $this->Version = $options->version;
+//        $this->AvailRatesOnly = $options->availableRatesOnly;
+//        $this->ExactMatchOnly = $options->exactMatchOnly;
+//        $this->PrimaryLangID = $options->languageCode;
+//        $this->RateDetailsInd = $options->rateDetails;
+//        $this->RateRangeOnly = $options->rateRangeOnly;
+//        $this->RequestedCurrency = $options->requestedCurrency;
+//        $this->SummaryOnly = $options->summaryOnly;
+//        $this->SearchCacheLevel = $options->searchCacheLevel;
+//
+//        if (!empty($options->sortOrder)) {
+//            $this->SortOrder = $options->sortOrder;
+//        }
+//        if (!empty($options->maxResponses)) {
+//            $this->MaxResponses = $options->maxResponses;
+//        }
+//    }
+//
+//    /**
+//     * @param MultiSingleAvail\Segment[] $segments
+//     */
+//    protected function loadSegments(array $segments): void
+//    {
+//        $this->AvailRequestSegments = new AvailRequestSegments();
+//
+//        foreach ($segments as $segment) {
+//            $this->AvailRequestSegments->AvailRequestSegment[] = new AvailRequestSegment($segment);
+//        }
+//    }
 }

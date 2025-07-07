@@ -307,9 +307,7 @@ class SoapHeader4 extends Base
             //Generate nonce, msg creation string & password digest:
             $password = base64_decode($params->authParams->passwordData);
             $creation = new \DateTime('now', new \DateTimeZone('UTC'));
-            $t = (float)microtime(true);
-            $micro = sprintf("%03d", ($t - floor($t)) * 1000);
-            $creationString = $this->createDateTimeStringForAuth($creation, $micro);
+            $creationString = $creation->format("Y-m-d\TH:i:s\.v\Z");
             $messageNonce = $this->generateUniqueNonce($params->authParams->nonceBase, $creationString);
             $encodedNonce = base64_encode($messageNonce);
             $digest = $this->generatePasswordDigest($password, $creationString, $messageNonce);
