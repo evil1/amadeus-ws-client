@@ -36,6 +36,8 @@ use Amadeus\Client\Struct\Hotel\MultiSingleAvailability\AvailRequestSegments;
  */
 class MultiSingleAvailability extends BaseWsMessage
 {
+    public string $xmlns = "http://www.opentravel.org/2003/05";
+
     /**
      * @var string
      */
