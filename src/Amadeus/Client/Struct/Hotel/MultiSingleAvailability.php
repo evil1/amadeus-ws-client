@@ -119,7 +119,14 @@ class MultiSingleAvailability extends \SoapVar
      */
     public function __construct(HotelMultiSingleAvailOptions $options)
     {
-        parent::__construct('<OTA_HotelAvailRQ></OTA_HotelAvailRQ>', XSD_ANYXML);
+        $xml = <<<XML
+<OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05">
+    <AvailRequestSegments>
+    </AvailRequestSegments>
+</OTA_HotelAvailRQ>
+XML;
+
+        parent::__construct($xml, XSD_ANYXML);
 //        $this->loadAttributes($options);
 //        $this->loadSegments($options->segments);
     }
