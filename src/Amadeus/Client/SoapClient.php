@@ -78,7 +78,7 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
             throw new Exception('PHP XSL extension is not enabled.');
         }
 
-        $newRequest = $this->transformIncomingRequest($request);
+        $newRequest = $this->transformIncomingRequest($request, $action);
 
         return parent::__doRequest($newRequest, $location, $action, $version, $oneWay);
     }
@@ -88,7 +88,7 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
      * @return string
      * @throws Exception when an XSLT file isn't readable
      */
-    protected function transformIncomingRequest(string $request): string
+    protected function transformIncomingRequest(string $request, string $action): string
     {
         $xsltFile = __DIR__ .DIRECTORY_SEPARATOR.self::REMOVE_EMPTY_XSLT_LOCATION;
         if (!is_readable($xsltFile)) {
@@ -121,6 +121,10 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
         }
 
         unset($processor, $xslt, $dom, $transform);
+
+        if ('http://webservices.amadeus.com/Hotel_MultiSingleAvailability_10.0' === $action) {
+
+        }
 
         return $newRequest;
     }
