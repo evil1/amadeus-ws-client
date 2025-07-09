@@ -123,9 +123,10 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
         unset($processor, $xslt, $dom, $transform);
 
         if ('http://webservices.amadeus.com/Hotel_MultiSingleAvailability_10.0' === $action) {
-
+            $newRequest = preg_replace('/ns1:/iu', '', $newRequest);
+            $newRequest = preg_replace('/xmlns:ns1="http:\/\/www.opentravel.org\/OTA\/2003\/05"\s/iu', '', $newRequest);
+            $newRequest = preg_replace('/<OTA_HotelAvailRQ/iu', '<OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05"', $newRequest);
         }
-
         return $newRequest;
     }
 }
