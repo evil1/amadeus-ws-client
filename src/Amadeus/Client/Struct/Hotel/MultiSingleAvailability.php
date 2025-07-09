@@ -133,12 +133,15 @@ class MultiSingleAvailability extends BaseWsMessage
         $this->Version = $options->version;
         $this->AvailRatesOnly = $options->availableRatesOnly;
         $this->ExactMatchOnly = $options->exactMatchOnly;
-        $this->PrimaryLangID = $options->languageCode;
         $this->RateDetailsInd = $options->rateDetails;
         $this->RateRangeOnly = $options->rateRangeOnly;
         $this->RequestedCurrency = $options->requestedCurrency;
         $this->SummaryOnly = $options->summaryOnly;
         $this->SearchCacheLevel = $options->searchCacheLevel;
+
+        if (!empty($options->languageCode)) {
+            $this->PrimaryLangID = $options->languageCode;
+        }
 
         if (!empty($options->sortOrder)) {
             $this->SortOrder = $options->sortOrder;
