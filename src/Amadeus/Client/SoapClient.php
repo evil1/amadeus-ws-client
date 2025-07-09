@@ -46,7 +46,7 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
      * Construct a new SoapClient
      *
      * @param string $wsdl Location of WSDL file
-     * @param array $options initialisation options
+     * @param array $options initialization options
      * @param Log\LoggerInterface|null $logger Error logging object
      */
     public function __construct($wsdl, $options, ?Log\LoggerInterface $logger = null)
@@ -67,12 +67,12 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
      * @param string $action The SOAP action.
      * @param int $version The SOAP version.
      * @param int|null $oneWay
-     * @uses parent::__doRequest
      * @return string The XML SOAP response.
      * @throws Exception When PHP XSL extension is not enabled or WSDL file isn't readable.
+     *@uses parent::__doRequest
      */
     #[\ReturnTypeWillChange]
-    public function __doRequest($request, $location, $action, $version, $oneWay = null)
+    public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false): string
     {
         if (!extension_loaded('xsl')) {
             throw new Exception('PHP XSL extension is not enabled.');
@@ -86,9 +86,9 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
     /**
      * @param string $request
      * @return string
-     * @throws Exception when XSLT file isn't readable
+     * @throws Exception when an XSLT file isn't readable
      */
-    protected function transformIncomingRequest($request)
+    protected function transformIncomingRequest(string $request): string
     {
         $xsltFile = __DIR__ .DIRECTORY_SEPARATOR.self::REMOVE_EMPTY_XSLT_LOCATION;
         if (!is_readable($xsltFile)) {
