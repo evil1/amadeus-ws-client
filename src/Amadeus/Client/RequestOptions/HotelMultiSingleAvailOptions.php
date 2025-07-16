@@ -64,7 +64,7 @@ class HotelMultiSingleAvailOptions extends Base
     public bool $summaryOnly = true;
 
     /**
-     * Should response contain room rate details?
+     * Should the response contain room rate details?
      *
      * @var bool
      */
