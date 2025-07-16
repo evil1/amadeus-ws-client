@@ -3,7 +3,7 @@ namespace Amadeus\Client\Struct\Hotel;
 
 use Amadeus\Client\RequestOptions\HotelDescriptiveInfoOptions;
 use Amadeus\Client\Struct\BaseWsMessage;
-use Amadeus\Client\RequestOptions\Hotel\DescriptiveInfo;
+use Amadeus\Client\RequestOptions\Hotel\DescriptiveInfo\Hotel;
 use Amadeus\Client\Struct\Hotel\DescriptiveInfo\HotelDescriptiveInfo;
 use Amadeus\Client\Struct\Hotel\DescriptiveInfo\HotelDescriptiveInfos;
 
@@ -52,7 +52,7 @@ class DescriptiveInfo extends BaseWsMessage
     }
 
     /**
-     * @param DescriptiveInfo\Hotel[] $hotels
+     * @param Hotel[] $hotels
      */
     protected function loadHotels(array $hotels): void
     {
