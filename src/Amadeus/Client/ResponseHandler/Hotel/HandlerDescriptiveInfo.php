@@ -49,6 +49,15 @@ class HandlerDescriptiveInfo extends StandardResponseHandler
         if ($errorCodeNode->length > 0) {
             $analyzeResponse->status = Result::STATUS_ERROR;
 
+            $errDesc = $errorCodeNode->item(0)->nodeValue;
+            $errCode = $errorCodeNode->item(0)->attributes->getNamedItem('Code')->nodeValue;
+            $level = $errorCodeNode->item(0)->attributes->getNamedItem('Type')->nodeValue;
+
+            $analyzeResponse->messages[] = new Result\NotOk(
+                $errCode,
+                $errDesc,
+                $level
+            );
         }
 
         return $analyzeResponse;
