@@ -32,7 +32,7 @@ use Amadeus\Client\Session\Handler\SendResult;
  * @package Amadeus\Client\ResponseHandler\Hotel
  * @author Dieter Devlieghere <dieter.devlieghere@benelux.amadeus.com>
  */
-class HandlerHotelDescriptiveInfo extends StandardResponseHandler
+class HandlerDescriptiveInfo extends StandardResponseHandler
 {
 
     /**
