@@ -2097,24 +2097,24 @@ class Client extends Base
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    protected function callMessage($messageName, $options, $messageOptions, $endSession = false)
+    protected function callMessage(
+        string $messageName,
+        RequestOptions\RequestOptionsInterface $options,
+        array $messageOptions,
+        bool $endSession = false
+    ): Result
     {
         $messageOptions = $this->makeMessageOptions($messageOptions, $endSession);
 
-        $this->lastMessage = $messageName;
-        $sendResult = $this->sessionHandler->sendMessage(
+        $params = $this->requestCreator->createRequest(
             $messageName,
-            $this->requestCreator->createRequest(
-                $messageName,
-                $options
-            ),
-            $messageOptions
+            $options
         );
 
-        $response = $this->responseHandler->analyzeResponse(
-            $sendResult,
-            $messageName
-        );
+        $this->lastMessage = $messageName;
+        $sendResult = $this->sessionHandler->sendMessage($messageName, $params, $messageOptions);
+
+        $response = $this->responseHandler->analyzeResponse($sendResult, $messageName);
 
         if ($messageOptions['returnXml'] === false) {
             $response->responseXml = null;
@@ -2126,16 +2126,16 @@ class Client extends Base
     /**
      * Make message options
      *
-     * Message options are meta options when sending a message to the amadeus web services
-     * - 'endSession' (if stateful) : should we end the current session after sending this call?
-     * - 'returnXml' : Should we return the XML string in the Result::responseXml property?
+     * Message options are meta-options when sending a message to the amadeus web services
+     * - 'endSession' (if stateful): should we end the current session after sending this call?
+     * - 'returnXml': Should we return the XML string in the Result::responseXml property?
      *   (this overrides the default setting returnXml in the Amadeus\Client\Params for a single message)
      *
      * @param array $incoming The Message options chosen by the caller - if any.
      * @param bool $endSession Switch if you want to terminate the current session after making the call.
      * @return array
      */
-    protected function makeMessageOptions(array $incoming, $endSession = false)
+    protected function makeMessageOptions(array $incoming, bool $endSession = false): array
     {
         $options = [
             'endSession' => $endSession,
