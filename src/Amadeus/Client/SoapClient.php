@@ -80,7 +80,18 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
 
         $newRequest = $this->transformIncomingRequest($request, $action);
 
-        return parent::__doRequest($newRequest, $location, $action, $version, $oneWay);
+        $response = parent::__doRequest($newRequest, $location, $action, $version, $oneWay);
+
+        $newResponse= $this->transformResponse($response, $action);
+
+        return $newResponse;
+    }
+
+    protected function transformResponse(string $response, string $action): string
+    {
+        $newResponse = $response;
+
+        return $newResponse;
     }
 
     /**
