@@ -493,18 +493,6 @@ class SoapHeader4 extends Base
     }
 
     /**
-     * @param \DateTime $creationDateTime
-     * @param string $micro
-     * @return string
-     */
-    protected function createDateTimeStringForAuth($creationDateTime, $micro)
-    {
-        $creationDateTime->setTimezone(new \DateTimeZone('UTC'));
-
-        return $creationDateTime->format("Y-m-d\TH:i:s:") . $micro . 'Z';
-    }
-
-    /**
      * Make SoapClient options for Soap Header 4 handler
      *
      * @return array
