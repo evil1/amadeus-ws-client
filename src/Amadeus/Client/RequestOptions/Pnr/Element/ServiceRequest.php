@@ -57,6 +57,14 @@ class ServiceRequest extends Element
      */
     const STATUS_NEED = "NN";
 
+    const TYPE_DOCS = 'DOCS';
+
+    const TYPE_EMAIL = 'CTCE';
+
+    const TYPE_FOID = 'FOID';
+
+    const TYPE_MOBILE = 'CTCM';
+
     /**
      * Service Request code
      *
