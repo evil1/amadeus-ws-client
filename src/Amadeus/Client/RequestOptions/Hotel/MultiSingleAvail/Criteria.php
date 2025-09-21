@@ -71,4 +71,14 @@ class Criteria extends LoadParamsFromArray
      * @var string
      */
     public string $alternateAvailability;
+
+    /**
+     * The RatePlanCode assigned by the receiving system for the inventory item in response to a new rate plan
+     * notification. (Implementation Notes: This would only be returned when the notification is of type New and the
+     * sender is translating RatePlanCode values. On subsequent transactions for this rate plan, the sender would
+     * populate the RatePlanCode attribute with this value returned by the receiver.)
+     *
+     * @var string[]
+     */
+    public array $ratePlanCodes = [];
 }

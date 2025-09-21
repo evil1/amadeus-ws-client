@@ -41,7 +41,7 @@ class MultiSingleAvailability extends BaseWsMessage
     /**
      * @var string
      */
-    public string $EchoToken = 'MultiSingle';
+    public string $EchoToken;
 
     /**
      * @var string
@@ -138,6 +138,8 @@ class MultiSingleAvailability extends BaseWsMessage
         $this->RequestedCurrency = $options->requestedCurrency;
         $this->SummaryOnly = $options->summaryOnly;
         $this->SearchCacheLevel = $options->searchCacheLevel;
+        $this->EchoToken = $options->echoToken;
+        $this->OnRequestInd = $options->onRequestInd;
 
         if (!empty($options->languageCode)) {
             $this->PrimaryLangID = $options->languageCode;

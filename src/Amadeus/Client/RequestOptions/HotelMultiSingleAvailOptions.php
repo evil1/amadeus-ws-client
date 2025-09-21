@@ -42,6 +42,14 @@ class HotelMultiSingleAvailOptions extends Base
     const CACHE_ONLY = "LessRecent";
     const CACHE_OR_AGGREGATOR = "VeryRecent";
 
+    const ECHO_TOKEN_MULTI_SINGLE = 'MultiSingle';
+    const ECHO_TOKEN_ENHANCED_PRICING = 'Pricing';
+
+    /**
+     * @var string A reference for additional message identification, assigned by the requesting host system.
+     */
+    public string $echoToken = self::ECHO_TOKEN_MULTI_SINGLE;
+
     /**
      * Hotel segments availability requested
      *
@@ -62,6 +70,12 @@ class HotelMultiSingleAvailOptions extends Base
      * @var bool
      */
     public bool $summaryOnly = true;
+
+    /**
+     * @var bool When true, the response should include rooms with an availability status of 'on request'. When false,
+     * the response should not include rooms with an availability status of 'on request'.
+     */
+    public bool $onRequestInd = false;
 
     /**
      * Should the response contain room rate details?

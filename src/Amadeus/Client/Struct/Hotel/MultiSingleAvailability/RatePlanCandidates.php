@@ -30,4 +30,10 @@ namespace Amadeus\Client\Struct\Hotel\MultiSingleAvailability;
  */
 class RatePlanCandidates
 {
+    /**
+     *
+     *
+     * @var RatePlanCandidate[]
+     */
+    public array $RatePlanCandidate = [];
 }
