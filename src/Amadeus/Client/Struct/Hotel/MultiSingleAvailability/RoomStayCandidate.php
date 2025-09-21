@@ -48,6 +48,16 @@ class RoomStayCandidate
     public GuestCounts $GuestCounts;
 
     /**
+     * @var string|null Specific system room type code, ex: A1K, A1Q etc.
+     */
+    public ?string $RoomTypeCode;
+
+    /**
+     * @var string|null This is used to indicate the item booked and is primarily used to exchange information with GDSs.
+     */
+    public ?string $BookingCode;
+
+    /**
      * RoomStayCandidate constructor.
      *
      * @param Room $room
@@ -56,6 +66,14 @@ class RoomStayCandidate
     {
         $this->RoomID = $room->id;
         $this->Quantity = $room->quantity;
+
+        if (!empty($room->roomTypeCode)) {
+            $this->RoomTypeCode = $room->roomTypeCode;
+        }
+
+        if (!empty($room->bookingCode)) {
+            $this->BookingCode = $room->bookingCode;
+        }
 
         $this->GuestCounts = new GuestCounts($room->guests);
         if (isset($room->guestsIsPerRoom)) {
