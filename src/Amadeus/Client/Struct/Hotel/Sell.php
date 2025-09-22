@@ -23,6 +23,7 @@ namespace Amadeus\Client\Struct\Hotel;
 
 use Amadeus\Client\RequestOptions\HotelSellOptions;
 use Amadeus\Client\Struct\BaseWsMessage;
+use Amadeus\Client\Struct\Hotel\Sell\RoomStayData;
 use Amadeus\Client\Struct\Hotel\Sell\TravelAgentRef;
 
 /**
@@ -33,12 +34,19 @@ use Amadeus\Client\Struct\Hotel\Sell\TravelAgentRef;
  */
 class Sell extends BaseWsMessage
 {
-    public string $xmlns = "http://www.opentravel.org/2003/05";
-
     public TravelAgentRef $travelAgentRef;
+
+    /**
+     * @var RoomStayData[]
+     */
+    public array $roomStayData = [];
 
     public function __construct(HotelSellOptions $options)
     {
         $this->travelAgentRef = new TravelAgentRef();
+
+        foreach ($options->rooms as $room) {
+            $this->roomStayData[] = new RoomStayData($room);
+        }
     }
 }
