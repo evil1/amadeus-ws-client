@@ -12,6 +12,8 @@ class RoomList
 
     public GuaranteeOrDeposit $guaranteeOrDeposit;
 
+    public SupplementaryInfo $supplementaryInfo;
+
     /**
      * @var GuestList[]
      */
