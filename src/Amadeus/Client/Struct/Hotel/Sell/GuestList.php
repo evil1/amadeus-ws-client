@@ -6,7 +6,7 @@ use Amadeus\Client\RequestOptions\Hotel\Sell\Guest;
 
 class GuestList
 {
-    public OccupantList $occupantList;
+    public OccupantList|null $occupantList = null;
 
     public Age $age;
 
