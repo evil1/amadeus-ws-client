@@ -22,7 +22,7 @@ class GlobalBookingInfo
         $this->bookingSource = new BookingSource($room);
 
         foreach ($room->guests as $guest) {
-            if ('ADT' === $guest->type) {
+            if ('ADT' === $guest->paxType) {
                 $this->representativeParties[] = new RepresentativeParties($guest);
             }
         }
