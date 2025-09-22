@@ -12,12 +12,17 @@ class RoomList
 
     public GuaranteeOrDeposit $guaranteeOrDeposit;
 
-    public GuestList $guestList;
+    /**
+     * @var GuestList[]
+     */
+    public array $guestList;
 
     public function __construct(Room $room, \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails)
     {
         $this->roomRateDetails = new RoomRateDetails($room);
         $this->guaranteeOrDeposit = new GuaranteeOrDeposit($paymentDetails);
-        $this->guestList = new GuestList($room);
+        foreach ($room->guests as $guest) {
+            $this->guestList[] = new GuestList($guest);
+        }
     }
 }

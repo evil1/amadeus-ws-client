@@ -2,24 +2,20 @@
 
 namespace Amadeus\Client\Struct\Hotel\Sell;
 
-use Amadeus\Client\RequestOptions\Hotel\Sell\Room;
+use Amadeus\Client\RequestOptions\Hotel\Sell\Guest;
 
 class GuestList
 {
-
-    /**
-     * @var OccupantList
-     */
     public OccupantList $occupantList;
 
-    public function __construct(Room $room)
+    public Age $age;
+
+    public function __construct(Guest $guest)
     {
-        foreach ($room->guests as $guest) {
-            if ($guest->type === 'ADT') {
-                $this->occupantList = new OccupantList($guest);
-            } else {
-                $this->age = new Age($guest->age);
-            }
+        if ($guest->type === 'ADT') {
+            $this->occupantList = new OccupantList($guest);
+        } else {
+            $this->age = new Age($guest->age);
         }
     }
 }
