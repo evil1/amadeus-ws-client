@@ -131,8 +131,6 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
             $newRequest = preg_replace('/ns1:/iu', '', $newRequest);
             $newRequest = preg_replace('/xmlns:ns1="http:\/\/www.opentravel.org\/OTA\/2003\/05"\s/iu', '', $newRequest);
             $newRequest = preg_replace('/<OTA_HotelDescriptiveInfoRQ/iu', '<OTA_HotelDescriptiveInfoRQ xmlns="http://www.opentravel.org/OTA/2003/05"', $newRequest);
-        } elseif ('http://webservices.amadeus.com/HBKRCQ_24_2_1A' === $action) {
-            $newRequest = preg_replace('/ns1:/iu', '', $newRequest);
         }
         return $newRequest;
     }
