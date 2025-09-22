@@ -12,10 +12,6 @@ class OccupantList
 
     public function __construct(Guest $guest, bool $guestList = false)
     {
-        if ($guest->type === 'ADT') {
-            $this->passengerReference = new PassengerReference($guest, $guestList);
-        } else {
-            $this->age = new Age($guest->age);
-        }
+        $this->passengerReference = new PassengerReference($guest, $guestList);
     }
 }

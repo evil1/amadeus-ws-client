@@ -8,14 +8,18 @@ class GuestList
 {
 
     /**
-     * @var OccupantList[]
+     * @var OccupantList
      */
-    public array $occupantList;
+    public OccupantList $occupantList;
 
     public function __construct(Room $room)
     {
         foreach ($room->guests as $guest) {
-            $this->occupantList[] = new OccupantList($guest);
+            if ($guest->type === 'ADT') {
+                $this->occupantList = new OccupantList($guest);
+            } else {
+                $this->age = new Age($guest->age);
+            }
         }
     }
 }
