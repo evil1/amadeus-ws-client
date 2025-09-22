@@ -30,6 +30,7 @@ use Amadeus\Client\RequestCreator\MessageVersionUnsupportedException;
 use Amadeus\Client\RequestOptions;
 use Amadeus\Client\RequestOptions\HotelDescriptiveInfoOptions;
 use Amadeus\Client\RequestOptions\HotelMultiSingleAvailOptions;
+use Amadeus\Client\RequestOptions\HotelSellOptions;
 use Amadeus\Client\Result;
 use Amadeus\Client\Session\Handler\UnsupportedOperationException;
 
@@ -1674,6 +1675,26 @@ class Client extends Base
     ): Result
     {
         $msgName = 'Hotel_MultiSingleAvailability';
+
+        return $this->callMessage($msgName, $options, $messageOptions);
+    }
+
+    /**
+     * Hotel_Sell
+     *
+     * @param HotelSellOptions $options
+     * @param array $messageOptions (OPTIONAL)
+     * @return Result
+     * @throws InvalidMessageException
+     * @throws MessageVersionUnsupportedException
+     * @throws Exception
+     */
+    public function hotelSell(
+        RequestOptions\HotelSellOptions $options,
+        array $messageOptions = []
+    ): Result
+    {
+        $msgName = 'Hotel_Sell';
 
         return $this->callMessage($msgName, $options, $messageOptions);
     }
