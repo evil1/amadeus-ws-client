@@ -8,8 +8,14 @@ class OccupantList
 {
     public PassengerReference $passengerReference;
 
-    public function __construct(Guest $guest)
+    public Age $age;
+
+    public function __construct(Guest $guest, bool $guestList = false)
     {
-        $this->passengerReference = new PassengerReference($guest);
+        if ($guest->type === 'ADT') {
+            $this->passengerReference = new PassengerReference($guest, $guestList);
+        } else {
+            $this->age = new Age($guest->age);
+        }
     }
 }

@@ -12,9 +12,12 @@ class RoomList
 
     public GuaranteeOrDeposit $guaranteeOrDeposit;
 
+    public GuestList $guestList;
+
     public function __construct(Room $room, \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails)
     {
         $this->roomRateDetails = new RoomRateDetails($room);
         $this->guaranteeOrDeposit = new GuaranteeOrDeposit($paymentDetails);
+        $this->guestList = new GuestList($room);
     }
 }

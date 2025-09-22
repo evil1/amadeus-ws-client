@@ -47,4 +47,10 @@ class Guest extends LoadParamsFromArray
      * @var int
      */
     public int $tattoo;
+
+    /**
+     * Guest age
+     * @var int
+     */
+    public int $age;
 }

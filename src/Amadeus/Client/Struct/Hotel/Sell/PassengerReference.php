@@ -10,9 +10,16 @@ class PassengerReference
 
     public int $value;
 
-    public function __construct(Guest $guest)
+    public function __construct(Guest $guest, bool $guestList = false)
     {
         $this->type = $guest->type;
+        if ($guestList) {
+            if (Guest::TYPE_BOOKING_HOLDER == $this->type) {
+                $this->type = 'RMO';
+            } else {
+                $this->type = 'ROP';
+            }
+        }
         $this->value = $guest->tattoo;
     }
 }
