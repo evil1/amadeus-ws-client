@@ -36,6 +36,12 @@ class Guest extends LoadParamsFromArray
     const TYPE_GUEST = 'BOP';
 
     /**
+     * Passenger age type. ADT or CHD
+     * @var string
+     */
+    public string $paxType;
+
+    /**
      * Guest type. self::TYPE_*
      * Only one booking holder is allowed per room. Normally the first passenger should be the booking holder.
      * @var string

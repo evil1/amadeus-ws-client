@@ -12,7 +12,7 @@ class GuestList
 
     public function __construct(Guest $guest)
     {
-        if ($guest->type === 'ADT') {
+        if ($guest->paxType === 'ADT') {
             $this->occupantList = new OccupantList($guest);
         } else {
             $this->age = new Age($guest->age);
