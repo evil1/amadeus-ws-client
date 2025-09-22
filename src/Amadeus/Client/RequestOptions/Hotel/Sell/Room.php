@@ -32,6 +32,30 @@ use Amadeus\Client\LoadParamsFromArray;
 class Room extends LoadParamsFromArray
 {
     /**
+     * Booking agency IATA code
+     * @var string
+     */
+    public string $agencyIata;
+
+    /**
+     * Hotel code for this room from the Hotel Details
+     * @var string
+     */
+    public string $hotelCode;
+
+    /**
+     * Chain code for this room from the Hotel Details
+     * @var string
+     */
+    public string $chainCode;
+
+    /**
+     * City code for this room from the Hotel Details
+     * @var string
+     */
+    public string $cityCode;
+
+    /**
      * Booking code for this room from the RoomStay
      * @var string
      */

@@ -21,13 +21,15 @@
  */
 namespace Amadeus\Client\RequestOptions\Hotel\Sell;
 
+use Amadeus\Client\LoadParamsFromArray;
+
 /**
  * Hotel_Sell Payment Options
  *
  * @package Amadeus\Client\RequestOptions\Sell
  * @author Dmitriy Gritsenko <gritsenko.dmitriy@gmail.com>
  */
-class PaymentDetails
+class PaymentDetails extends LoadParamsFromArray
 {
     const PAYMENT_TYPE_GUARANTEE = 1;
 

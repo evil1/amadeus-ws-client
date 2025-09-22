@@ -21,13 +21,15 @@
  */
 namespace Amadeus\Client\RequestOptions\Hotel\Sell;
 
+use Amadeus\Client\LoadParamsFromArray;
+
 /**
  * Hotel_Sell Credit Card Information
  *
  * @package Amadeus\Client\RequestOptions\Sell
  * @author Dmitriy Gritsenko <gritsenko.dmitriy@gmail.com>
  */
-class CreditCardInfo
+class CreditCardInfo extends LoadParamsFromArray
 {
     const TYPE_AMERICAN_EXPRESS = 'AX';
 

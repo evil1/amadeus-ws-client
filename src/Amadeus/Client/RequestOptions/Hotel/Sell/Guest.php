@@ -21,13 +21,15 @@
  */
 namespace Amadeus\Client\RequestOptions\Hotel\Sell;
 
+use Amadeus\Client\LoadParamsFromArray;
+
 /**
  * Hotel_Sell Guest information
  *
  * @package Amadeus\Client\RequestOptions\Sell
  * @author Dmitriy Gritsenko <gritsenko.dmitriy@gmail.com>
  */
-class Guest
+class Guest extends LoadParamsFromArray
 {
     const TYPE_BOOKING_HOLDER = 'BHO';
 
