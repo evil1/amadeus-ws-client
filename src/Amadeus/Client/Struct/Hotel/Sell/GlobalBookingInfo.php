@@ -10,9 +10,19 @@ class GlobalBookingInfo
 
     public BookingSource $bookingSource;
 
+    /**
+     * Passenger details
+     * @var RepresentativeParties[]
+     */
+    public array $representativeParties = [];
+
     public function __construct(Room $room)
     {
         $this->markerGlobalBookingInfo = new MarkerGlobalBookingInfo($room);
         $this->bookingSource = new BookingSource($room);
+
+        foreach ($room->guests as $guest) {
+            $this->representativeParties[] = new RepresentativeParties($guest);
+        }
     }
 }
