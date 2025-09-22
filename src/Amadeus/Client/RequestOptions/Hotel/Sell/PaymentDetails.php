@@ -33,13 +33,15 @@ class PaymentDetails extends LoadParamsFromArray
 {
     const PAYMENT_TYPE_GUARANTEE = 1;
 
-    const PAYMENT_TYPE_DEPOSIT = 1;
+    const PAYMENT_TYPE_DEPOSIT = 2;
 
     const SERVICE_HOTEL = 3;
 
     const FOP_CREDIT_CARD = 1;
 
     const FOP_AGENCY_DEPOSIT = 9;
+
+    public int $fop = self::FOP_CREDIT_CARD;
 
     public int $paymentType = self::PAYMENT_TYPE_GUARANTEE;
 
