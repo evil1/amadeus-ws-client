@@ -10,6 +10,8 @@ class RoomRateDetails
 
     public HotelProductReference $hotelProductReference;
 
+    public string|null $markerOfExtra = null;
+
     public function __construct(Room $room)
     {
         $this->hotelProductReference = new HotelProductReference($room);
