@@ -1680,6 +1680,26 @@ class Client extends Base
     }
 
     /**
+     * Hotel_CompleteReservationDetails
+     *
+     * @param HotelSellOptions $options
+     * @param array $messageOptions (OPTIONAL)
+     * @return Result
+     * @throws InvalidMessageException
+     * @throws MessageVersionUnsupportedException
+     * @throws Exception
+     */
+    public function hotelCompleteReservationDetails(
+        RequestOptions\HotelCompleteReservationDetailsOptions $options,
+        array $messageOptions = []
+    ): Result
+    {
+        $msgName = 'Hotel_CompleteReservationDetails';
+
+        return $this->callMessage($msgName, $options, $messageOptions);
+    }
+
+    /**
      * Hotel_Sell
      *
      * @param HotelSellOptions $options
