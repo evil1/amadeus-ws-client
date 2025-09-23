@@ -12,7 +12,11 @@ class RoomList
 
     public GuaranteeOrDeposit $guaranteeOrDeposit;
 
-    public SupplementaryInfo $supplementaryInfo;
+    /**
+     * Miscellaneous remarks
+     * @var SupplementaryInfo[]
+     */
+    public array $supplementaryInfo;
 
     /**
      * @var GuestList[]
@@ -32,7 +36,9 @@ class RoomList
         }
 
         if (!empty($remarks)) {
-            $this->supplementaryInfo = new SupplementaryInfo($remarks);
+            foreach ($remarks as $remark) {
+                $this->supplementaryInfo[] = new SupplementaryInfo($remark);
+            }
         }
     }
 }

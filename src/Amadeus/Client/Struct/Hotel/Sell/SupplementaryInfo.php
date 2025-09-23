@@ -4,15 +4,10 @@ namespace Amadeus\Client\Struct\Hotel\Sell;
 
 class SupplementaryInfo
 {
-    /**
-     * @var RemarkDetails[]
-     */
-    public array $remarkDetails = [];
+    public RemarkDetails $remarkDetails;
 
-    public function __construct(array $remarks)
+    public function __construct(string $remark)
     {
-        foreach ($remarks as $remark) {
-            $this->remarkDetails[] = new RemarkDetails($remark);
-        }
+        $this->remarkDetails = new RemarkDetails($remark);
     }
 }
