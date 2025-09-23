@@ -66,4 +66,6 @@ class Room extends LoadParamsFromArray
      * @var Guest[]
      */
     public array $guests = [];
+
+    public ?string $remark;
 }

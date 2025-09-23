@@ -12,22 +12,14 @@ class RoomList
 
     public GuaranteeOrDeposit $guaranteeOrDeposit;
 
-    /**
-     * Miscellaneous remarks
-     * @var SupplementaryInfo[]
-     */
-    public array $supplementaryInfo;
+    public SupplementaryInfo $supplementaryInfo;
 
     /**
      * @var GuestList[]
      */
     public array $guestList;
 
-    public function __construct(
-        Room $room,
-        \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails,
-        array $remarks
-    )
+    public function __construct(Room $room, \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails)
     {
         $this->roomRateDetails = new RoomRateDetails($room);
         $this->guaranteeOrDeposit = new GuaranteeOrDeposit($paymentDetails);
@@ -35,10 +27,8 @@ class RoomList
             $this->guestList[] = new GuestList($guest);
         }
 
-        if (!empty($remarks)) {
-            foreach ($remarks as $remark) {
-                $this->supplementaryInfo[] = new SupplementaryInfo($remark);
-            }
+        if (!empty($room->remark)) {
+            $this->supplementaryInfo = new SupplementaryInfo($room->remark);
         }
     }
 }

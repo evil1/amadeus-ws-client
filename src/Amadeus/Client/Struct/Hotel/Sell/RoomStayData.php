@@ -14,11 +14,10 @@ class RoomStayData
 
     public function __construct(
         Room $room,
-        \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails,
-        array $remarks
+        \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails
     )
     {
         $this->globalBookingInfo = new GlobalBookingInfo($room);
-        $this->roomList = new RoomList($room, $paymentDetails, $remarks);
+        $this->roomList = new RoomList($room, $paymentDetails);
     }
 }

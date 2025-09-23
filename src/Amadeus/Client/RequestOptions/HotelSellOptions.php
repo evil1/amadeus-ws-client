@@ -44,5 +44,5 @@ class HotelSellOptions extends Base
      */
     public PaymentDetails $paymentDetails;
 
-    public array $hotelRemarks = [];
+    public ?string $hotelRemark;
 }

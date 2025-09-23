@@ -46,7 +46,7 @@ class Sell extends BaseWsMessage
         $this->travelAgentRef = new TravelAgentRef();
 
         foreach ($options->rooms as $room) {
-            $this->roomStayData[] = new RoomStayData($room, $options->paymentDetails, $options->hotelRemarks);
+            $this->roomStayData[] = new RoomStayData($room, $options->paymentDetails);
         }
     }
 }
