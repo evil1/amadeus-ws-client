@@ -49,11 +49,7 @@ class HandlerSell extends StandardResponseHandler
             $response,
             self::Q_ERR_CODE,
             self::Q_ERR_CAT,
-            self::Q_ERR_MSG,
-            [
-                0 => 'system',
-                1 => 'application'
-            ]
+            self::Q_ERR_MSG
         );
     }
 
