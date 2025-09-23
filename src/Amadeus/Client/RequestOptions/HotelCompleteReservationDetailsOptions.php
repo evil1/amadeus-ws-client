@@ -34,7 +34,7 @@ class HotelCompleteReservationDetailsOptions extends Base
     /**
      * @var string PNR code of the reservation
      */
-    public string $controlNumber;
+    public string $recordLocator;
 
     /**
      * @var int Segment tattoo to be retrieved

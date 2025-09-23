@@ -12,7 +12,7 @@ class RetrievalKeyGroup
 
     public function __construct(HotelCompleteReservationDetailsOptions $options)
     {
-        $this->retrievalKey = new RetrievalKey($options->controlNumber);
+        $this->retrievalKey = new RetrievalKey($options->recordLocator);
         $this->tattooID = new Tattoo($options->segment);
     }
 }
