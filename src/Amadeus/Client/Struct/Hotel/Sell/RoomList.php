@@ -19,12 +19,20 @@ class RoomList
      */
     public array $guestList;
 
-    public function __construct(Room $room, \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails)
+    public function __construct(
+        Room $room,
+        \Amadeus\Client\RequestOptions\Hotel\Sell\PaymentDetails $paymentDetails,
+        array $remarks
+    )
     {
         $this->roomRateDetails = new RoomRateDetails($room);
         $this->guaranteeOrDeposit = new GuaranteeOrDeposit($paymentDetails);
         foreach ($room->guests as $guest) {
             $this->guestList[] = new GuestList($guest);
+        }
+
+        if (!empty($remarks)) {
+            $this->supplementaryInfo = new SupplementaryInfo($remarks);
         }
     }
 }
