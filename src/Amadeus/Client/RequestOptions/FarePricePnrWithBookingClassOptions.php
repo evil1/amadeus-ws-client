@@ -54,6 +54,8 @@ class FarePricePnrWithBookingClassOptions extends Base
     const OVERRIDE_PTC_ONLY = 'PTC';
     const OVERRIDE_FORM_OF_PAYMENT = 'FOP';
 
+    const OVERRIDE_HOMOGENEOUS = 'FFH';
+
     const PRICING_LOGIC_IATA = 'IATA';
     const PRICING_LOGIC_ATAF = 'ATAF';
 
