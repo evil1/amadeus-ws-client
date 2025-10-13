@@ -32,6 +32,11 @@ class TicketInitRefundOptions extends Base
 {
     const ACTION_ATC_REFUND = 'ATC';
 
-    public $ticketNumbers = [];
-    public $actionDetails = [];
+    public array $ticketNumbers = [];
+
+    public array $actionDetails = [];
+
+    public string $stockProvider;
+
+    public string $stockType;
 }

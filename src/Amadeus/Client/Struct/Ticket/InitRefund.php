@@ -26,6 +26,7 @@ use Amadeus\Client\RequestOptions\TicketInitRefundOptions;
 use Amadeus\Client\Struct\BaseWsMessage;
 use Amadeus\Client\Struct\Ticket\InitRefund\Contracts;
 use Amadeus\Client\Struct\Ticket\InitRefund\ActionDetails;
+use Amadeus\Client\Struct\Ticket\InitRefund\StockProvider;
 
 /**
  * Ticket_InitRefund request structure
@@ -35,18 +36,25 @@ use Amadeus\Client\Struct\Ticket\InitRefund\ActionDetails;
  */
 class InitRefund extends BaseWsMessage
 {
-    public $Contracts = null;
-    public $ActionDetails = null;
-    public $Version = "2.000";
+    public string $Version = "2.000";
+
+    public Contracts|null $Contracts = null;
+
+    public ActionDetails|null $ActionDetails = null;
+
+    public StockProvider|null $StockProvider = null;
 
     /**
      * InitRefund constructor.
      *
      * @param TicketInitRefundOptions $options
      */
-    public function __construct($options)
+    public function __construct(TicketInitRefundOptions $options)
     {
         $this->Contracts = new Contracts($options->ticketNumbers);
         $this->ActionDetails = new ActionDetails($options->actionDetails);
+        if (!empty($options->stockProvider) && !empty($options->stockType)) {
+            $this->StockProvider = new StockProvider($options->stockType, $options->stockProvider);
+        }
     }
 }
