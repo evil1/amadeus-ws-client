@@ -56,10 +56,6 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
         }
         $this->setLogger($logger);
 
-        $options['classmap'] = [
-            'MultimediaDescription' => \Amadeus\Client\ResponseStruct\Hotel\DescriptiveInfo\MultimediaDescription::class,
-        ];
-
         parent::__construct($wsdl, $options);
     }
 
