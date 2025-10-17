@@ -49,12 +49,16 @@ class SoapClient extends \SoapClient implements Log\LoggerAwareInterface
      * @param array $options initialization options
      * @param Log\LoggerInterface|null $logger Error logging object
      */
-    public function __construct($wsdl, $options, ?Log\LoggerInterface $logger = null)
+    public function __construct($wsdl, array $options, ?Log\LoggerInterface $logger = null)
     {
         if (!($logger instanceof Log\LoggerInterface)) {
             $logger = new Log\NullLogger();
         }
         $this->setLogger($logger);
+
+        $options['classmap'] = [
+            'MultimediaDescription' => \Amadeus\Client\ResponseStruct\Hotel\DescriptiveInfo\MultimediaDescription::class,
+        ];
 
         parent::__construct($wsdl, $options);
     }
