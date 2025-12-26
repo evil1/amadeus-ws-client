@@ -42,7 +42,10 @@ class AvailRequestSegment
      */
     public string $InfoSource;
 
-    public $MoreDataEchoToken;
+    /**
+     * @var string
+     */
+    public string $MoreDataEchoToken;
 
     /**
      * AvailRequestSegment constructor.
@@ -53,12 +56,17 @@ class AvailRequestSegment
     {
         if ($segment instanceof Segment) {
             $this->InfoSource = $segment->infoSource;
-            $this->HotelSearchCriteria = new HotelSearchCriteria($segment->criteria);
-            if (isset($segment->bestOnly)) {
-                $this->HotelSearchCriteria->BestOnlyIndicator = $segment->bestOnly;
+            if (!empty($segment->moreToken)) {
+                $this->MoreDataEchoToken = $segment->moreToken;
             }
-            if (isset($segment->availableOnly)) {
-                $this->HotelSearchCriteria->AvailableOnlyIndicator = $segment->availableOnly;
+            if (!empty($segment->criteria)) {
+                $this->HotelSearchCriteria = new HotelSearchCriteria($segment->criteria);
+                if (isset($segment->bestOnly)) {
+                    $this->HotelSearchCriteria->BestOnlyIndicator = $segment->bestOnly;
+                }
+                if (isset($segment->availableOnly)) {
+                    $this->HotelSearchCriteria->AvailableOnlyIndicator = $segment->availableOnly;
+                }
             }
         }
     }
