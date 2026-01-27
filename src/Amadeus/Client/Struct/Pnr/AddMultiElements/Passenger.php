@@ -226,7 +226,7 @@ class Passenger extends \Amadeus\Client\Struct\Pnr\Retrieve\Passenger
      *
      * @var string
     */
-    public $type;
+    public ?string $type = null;
     
     /*
      * self::INF_*
@@ -249,6 +249,8 @@ class Passenger extends \Amadeus\Client\Struct\Pnr\Retrieve\Passenger
     public function __construct($firstName, $type)
     {
         parent::__construct($firstName);
-        $this->type = $type;
+        if (!empty($type) && Passenger::PASST_ADULT != $type) {
+            $this->type = $type;
+        }
     }
 }
