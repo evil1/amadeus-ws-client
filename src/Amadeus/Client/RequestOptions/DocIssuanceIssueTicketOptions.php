@@ -132,7 +132,7 @@ class DocIssuanceIssueTicketOptions extends Base
      *
      * @var int[]
      */
-    public $tsts = [];
+    public array $tsts = [];
 
     /**
      * Tattoos of segments to be ticketed
@@ -141,7 +141,16 @@ class DocIssuanceIssueTicketOptions extends Base
      *
      * @var int[]
      */
-    public $segmentTattoos = [];
+    public array $segmentTattoos = [];
+
+    /**
+     * Tattoos of tickets to be revalidated
+     *
+     * TTP/S1
+     *
+     * @var int[]
+     */
+    public array $ticketsTattoos = [];
 
     /**
      * Tattoos of passengers to be ticketed

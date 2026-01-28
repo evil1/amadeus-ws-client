@@ -105,6 +105,15 @@ class IssueTicket extends DocIssuanceBaseMsg
             );
         }
 
+        foreach ($options->ticketsTattoos as $ticketTattoo) {
+            $this->addSelectionItem(
+                new ReferenceDetails(
+                    $ticketTattoo,
+                        ReferenceDetails::TYPE_PNR_FA_TATTOO
+                )
+            );
+        }
+
         foreach ($options->lineNumbers as $lineNumber) {
             $this->addSelectionItem(
                 new ReferenceDetails(
